@@ -1,7 +1,8 @@
 class Solution(object):
     def heightChecker(self, heights):
-        """
-        :type heights: List[int]
-        :rtype: int
-        """
-        return sum(h1 != h2 for h1, h2 in zip(heights, sorted(heights)))
+        a = sorted(heights)
+        l = 0
+        for i in range(len(heights)):
+            if heights[i] != a[i]:
+                l+=1
+        return l 
